@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta charset="utf-8" />
+    <title>Revere Crash Statistics</title>
+
+</head>
+<body style="background-color:lightblue;">
+      <center><h1>Revere, MA Crash Statistics</h1>
+      <h4>(2002 - 2016)</h4><br>
+      <h3>Click a button to learn more.<br><br>
+      
+      <a href="{{ url_for('bar') }}"><button>Number of Crashes Per Year</button></a><br><br>
+      <a href="{{ url_for('line') }}"><button>Percentage Change in Number of Crashes</button></a><br><br>
+      <a href="{{ url_for('fatal') }}"><button>Number of Fatal Crashes Per Year</button></a><br><br>
+      <a href="{{ url_for('nonfatal') }}"><button>Number of Non-Fatal Crashes Per Year</button></a><br><br>
+      <a href="{{ url_for('noinjury') }}"><button>Number of Crashes Yielding No Injuries Per Year</button></a><br><br>
+      <a href="{{url_for('maps')}}"><button>Show Geospatial Mapping of Crashes</button></a><br><br>
+      <a href="{{ url_for('clusters') }}"><button>Evolution of Clusters of Crashes</button></a><br><br>
+      <a href="{{url_for('display_clusters')}}"><button>Show Geospatial Mapping of Clusters</button></a><br><br><br>
+      <img src="https://upload.wikimedia.org/wikipedia/en/1/17/RevereMA-seal.png" alt="Revere, MA Seal" height="200" width="200"></center>
+
+
+
+
+
+
+</body>
+</html>

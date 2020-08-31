@@ -1,0 +1,27 @@
+@import url('https://fonts.googleapis.com/css?family=Alegreya+Sans:800');
+
+
+body {
+    font-family: 'Alegreya Sans', sans-serif;
+    overflow-x: hidden;
+    background-color: #C0C0C0;
+}
+
+.nav {
+    height: 100%;
+    width: 20vmax;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    overflow-x: hidden;
+}
+
+
+.embed {
+    margin-left: 20vmax;
+    width: 80vmax;
+    height: 100vmax;
+    padding: 0;
+}
+

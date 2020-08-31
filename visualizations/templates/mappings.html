@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Revere Accidents</title>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js">
+    </script>
+    <link rel="stylesheet" href={{ url_for('static', filename='style.css') }}>
+    <meta charset="UTF-8">
+
+</head>
+
+<body>
+
+    <div id="content">
+
+        <div id="menu" class="nav">
+            <form name="filters" action="display_maps" method="post">
+                <label> Start Date: </label><br>
+                <input type="date" name="startDate" required> <br>
+                <label> End Date: </label><br>
+                <input type="date" name="endDate" required><br>
+
+                <br>
+                <label> Between Hours: </label><br>
+                <input type="time" name="startTime"> <br>
+                <label> and </label><br>
+                <input type="time" name="endTime"><br>
+                <br>
+
+                <select name ='manner'>
+                    <option value="no filter">No Filter</option>
+                    <option value="Single vehicle crash">single vehicle</option>
+                    <option value="Rear-end">rear-end</option>
+                    <option value="Angle">angle</option>
+                    <option value="Sideswipe, opposite direction">sideswipe (opposite)</option>
+                    <option value="Head-on">head-on</option>
+                    <option value="Sideswipe, same direction">sideswipe (same)</option>
+                    <option value="Rear-to-rear">rear-to-rear</option>
+                </select>
+
+                <input type="submit" value="Submit">
+            </form>
+
+            <br><br><br><a href="{{ url_for('home') }}"><button>Return to Home Page</button></a><br><br>
+        </div>
+
+        <embed class="embed" src={{ url_for('static', filename='folium_test.html') }} type="text/html">
+    </div>
+
+</body>
+</html>

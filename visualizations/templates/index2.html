@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+
+<html>
+
+ <head>
+
+<title>Clustering of Crashes</title>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js"></script>
+
+
+
+</head>
+
+<body>
+
+<center>
+<h1>{{title}}</h1>
+
+
+ <div class="wrapper">
+
+
+<canvas id="myChart" width="400" height="150"></canvas>
+
+ </div>
+
+
+<script labels = labels values = values>
+// Our labels along the x-axis
+
+var years =
+         [
+          {% for item in labels %}
+            "{{ item }}",
+          {% endfor %}
+        ]
+// For drawing the lines
+
+var cluster1 =
+        [{% for item in values[0]%}
+            "{{ item }}",
+          {% endfor %}
+        ]
+;
+var cluster2=  [{% for item in values[1]%}
+            "{{ item }}",
+          {% endfor %}
+        ]
+;
+
+var cluster3=   [{% for item in values[2]%}
+            "{{ item }}",
+          {% endfor %}
+        ]
+;
+
+
+var ctx = document.getElementById("myChart");
+
+var myChart = new Chart(ctx, {
+
+type: 'line',
+
+data: {
+labels: years,
+
+datasets: [
+
+{
+ data: cluster1, label: "Cluster 1",
+  borderColor: "#3e95cd",
+fill: false
+      },
+
+{
+ data: cluster2, label: "Cluster 2",
+borderColor: "#8e5ea2",
+ fill: false
+      },
+
+{
+ data: cluster3, label: "Cluster 3",
+  borderColor: "#3cba9f",
+ fill: false
+      }
+ ]
+  }
+})
+</script>
+
+<br><br><br><a href="{{ url_for('home') }}"><button>Return to Home Page</button></a><br><br>
+</center>
+
+ </body>
+</html>
